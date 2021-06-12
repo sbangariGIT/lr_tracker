@@ -48,6 +48,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    //Widget: property: (New Widget)
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -57,15 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'GPS Tracker',
+              'Arun is a noob',
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //Do Nothing for noe
-        },
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
