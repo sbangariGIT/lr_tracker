@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lr_tracker/viwes/home_screen.dart';
+import 'package:lr_tracker/views/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'models/user_location.dart';
