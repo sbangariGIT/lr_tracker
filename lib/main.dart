@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
     return StreamProvider<UserLocation>(
         initialData: new UserLocation(latitude: 0, longitude: 0),
         create: (context) => LocationService().locationStream,
-        child: MaterialApp(title: 'Flutter Demo', home: Home()));
+        child: MaterialApp(title: 'lr_tracking', home: Home()));
   }
 }
