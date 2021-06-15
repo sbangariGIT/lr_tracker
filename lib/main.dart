@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lr_tracker/viwes/home_screen.dart';
+import 'package:lr_tracker/views/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'models/user_location.dart';
@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
     return StreamProvider<UserLocation>(
         initialData: new UserLocation(latitude: 0, longitude: 0),
         create: (context) => LocationService().locationStream,
-        child: MaterialApp(title: 'Flutter Demo', home: Home()));
+        child: MaterialApp(title: 'lr_tracking', home: Home()));
   }
 }
