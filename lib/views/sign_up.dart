@@ -17,29 +17,6 @@ class _SignupState extends State<Signup> {
   TextEditingController phoneTextEditingController =
       new TextEditingController();
   final formkeys = GlobalKey<FormState>();
-  signUpcommand() async {
-    // if (formkeys.currentState.validate()) {
-    //   await authService
-    //       .signUpWithEmailAndPassword(emailTextEditingController.text,
-    //           passwordTextEditingController.text)
-    //       .then((result) {
-    //     if (result != null) {
-    //       Map<String, String> userDataMap = {
-    //         "userName": nameTextEditingController.text,
-    //         "userEmail": emailTextEditingController.text,
-    //         "userPhone": phoneTextEditingController.text
-    //       };
-    //       HelperFunctions.saveUserLoggedInSharedPreference(true);
-    //       HelperFunctions.saveUserNameSharedPreference(
-    //           nameTextEditingController.text);
-    //       HelperFunctions.saveUserEmailSharedPreference(
-    //           emailTextEditingController.text);
-    //       databaseMethods.addUserInfo(userDataMap);
-    //       Navigator.pushReplacement(
-    //           context, MaterialPageRoute(builder: (context) => display()));
-    //     }
-    // });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -190,9 +167,7 @@ class _SignupState extends State<Signup> {
                           height: 40,
                         ),
                         GestureDetector(
-                            onTap: () {
-                              signUpcommand();
-                            },
+                            onTap: () {},
                             child: Container(
                               height: 50,
                               margin: EdgeInsets.symmetric(horizontal: 50),

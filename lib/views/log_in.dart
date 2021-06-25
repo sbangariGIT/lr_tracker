@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lr_tracker/services/auth_service.dart';
+import 'package:lr_tracker/views/home_screen.dart';
 import 'package:lr_tracker/views/sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -15,32 +17,6 @@ class _LoginState extends State<Login> {
       new TextEditingController();
   final formkeys = GlobalKey<FormState>();
   bool loading = false;
-  logincommand(BuildContext context) async {
-    // if (formkeys.currentState.validate()) {
-    //   // await authService
-    //   //     .signInWithEmailAndPassword(emailTextEditingController.text,
-    //   //         passwordTextEditingController.text)
-    //   //     .then((result) async {
-    //   //   if (result != null) {
-    //   //     QuerySnapshot userInfoSnapshot = await DatabaseMethods()
-    //   //         .getUserInfo(emailTextEditingController.text);
-
-    //   //     HelperFunctions.saveUserLoggedInSharedPreference(true);
-    //   //     HelperFunctions.saveUserNameSharedPreference(
-    //   //         userInfoSnapshot.documents[0].data["userName"]);
-    //   //     HelperFunctions.saveUserEmailSharedPreference(
-    //   //         userInfoSnapshot.documents[0].data["userEmail"]);
-
-    //   //     Navigator.pushReplacement(
-    //   //         context, MaterialPageRoute(builder: (context) => display()));
-    //   //   } else {
-    //   //     Scaffold.of(context).showSnackBar(SnackBar(
-    //   //       content: Text(" Incorrect Password or username"),
-    //   //     ));
-    //   //   }
-    //   // });
-    // }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +143,11 @@ class _LoginState extends State<Login> {
                         ),
                         GestureDetector(
                             onTap: () {
-                              logincommand(context);
+                              signInWithGoogle().then((value) {});
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()));
                             },
                             child: Container(
                               height: 50,
@@ -198,12 +178,7 @@ class _LoginState extends State<Login> {
                           children: <Widget>[
                             Expanded(
                               child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Signup()));
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     height: 50,
                                     decoration: BoxDecoration(
