@@ -14,6 +14,16 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var userLocation = Provider.of<UserLocation>(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("Yo! Wassup boys"),
+        leading: GestureDetector(
+          onTap: () {},
+          child: Container(
+            child: Text("Log out"),
+          ),
+        ),
+      ),
       body: Center(
         child: Text(
             'Location: Lat:${userLocation.latitude}, Long: ${userLocation.longitude}'),
