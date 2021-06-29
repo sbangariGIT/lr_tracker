@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lr_tracker/services/auth_service.dart';
 import 'package:lr_tracker/views/home_screen.dart';
-import 'package:lr_tracker/views/sign_up.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -142,12 +141,15 @@ class _LoginState extends State<Login> {
                           height: 40,
                         ),
                         GestureDetector(
-                            onTap: () {
-                              signInWithGoogle().then((value) {});
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Home()));
+                            onTap: () async {
+                              signInWithGoogle().catchError((onError) {
+                                print(onError);
+                              }).then((_) {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Home()));
+                              });
                             },
                             child: Container(
                               height: 50,
