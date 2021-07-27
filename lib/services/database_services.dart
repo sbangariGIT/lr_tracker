@@ -23,6 +23,19 @@ class DatabaseService {
   }
 
   getOthersLocations() async {
+    print("Yo Bro Wassup");
     return FirebaseFirestore.instance.collection("users").snapshots();
+  }
+
+  Future<void> updateLocation(String? userId, double? lat, double? long) {
+    // Call the user's CollectionReference to add a new user
+    return users
+        .doc(userId)
+        .update({
+          'latitude': lat,
+          'longitude': long,
+        })
+        .then((value) => print("Location Updated"))
+        .catchError((error) => print("Failed to add user: $error"));
   }
 }
